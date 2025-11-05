@@ -1,7 +1,5 @@
-// routes/user.routes.js
 import { Router } from 'express'
 import {
-  displayHome,
   getUsers,
   getUserById,
   createUser,
@@ -12,7 +10,6 @@ import verifyToken from '../middlewares/verifyToken.js'
 
 const router = Router()
 
-router.get('/', displayHome)
 router.get('/users', verifyToken, getUsers)
 router.get('/users/:id', verifyToken, getUserById)
 router.post('/users', verifyToken, createUser)
